@@ -17,7 +17,7 @@ services:
     environment:
       - NODE_ENV=production
       - DOMAIN_NAME=${DOMAIN_NAME:-veeam-status.example.com}
-      - GIT_TERMINAL_PROMPT=0
+      # Removing GIT_TERMINAL_PROMPT as it's causing issues
     networks:
       - veeam-net
       - traefik-public
