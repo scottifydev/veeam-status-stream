@@ -6,11 +6,6 @@ services:
     image: node:20-alpine
     command: >
       sh -c "
-        apk add --no-cache wget unzip &&
-        wget -O /tmp/repo.zip https://github.com/scottifydev/veeam-status-stream/archive/refs/heads/main.zip &&
-        mkdir -p /app &&
-        unzip /tmp/repo.zip -d /tmp &&
-        mv /tmp/veeam-status-stream-main/* /app/ &&
         cd /app &&
         npm install &&
         npm run build &&
@@ -20,6 +15,8 @@ services:
     environment:
       - NODE_ENV=production
       - DOMAIN_NAME=${DOMAIN_NAME:-veeam-status.example.com}
+    volumes:
+      - ./:/app
     networks:
       - veeam-net
       - traefik-public
