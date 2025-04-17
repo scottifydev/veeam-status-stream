@@ -7,7 +7,7 @@ services:
     command: >
       sh -c "
         apk add --no-cache git &&
-        git clone https://github.com/YOUR_REPO_URL.git /app &&
+        git clone https://github.com/yourusername/veeam-status.git /app &&
         cd /app &&
         npm install &&
         npm run build &&
@@ -41,4 +41,3 @@ networks:
     driver: overlay
   traefik-public:
     external: true
-
