@@ -21,12 +21,12 @@ export const BackupJobCard = ({ job }: BackupJobCardProps) => {
   };
 
   return (
-    <Card className="p-6 hover:shadow-lg transition-shadow">
+    <Card className="p-6 hover:bg-accent/50 transition-colors border-border/40">
       <div className="space-y-4">
         <div className="flex justify-between items-start">
           <div>
-            <h3 className="text-lg font-semibold text-gray-900">{job.name}</h3>
-            <p className="text-sm text-gray-500">{job.type}</p>
+            <h3 className="text-lg font-semibold text-foreground">{job.name}</h3>
+            <p className="text-sm text-muted-foreground">{job.type}</p>
           </div>
           <StatusIndicator status={job.status} />
         </div>
@@ -35,16 +35,16 @@ export const BackupJobCard = ({ job }: BackupJobCardProps) => {
         
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div>
-            <p className="text-gray-500">Start Time</p>
-            <p className="font-mono">{formatDate(job.startTime)}</p>
+            <p className="text-muted-foreground">Start Time</p>
+            <p className="font-mono text-foreground">{formatDate(job.startTime)}</p>
           </div>
           <div>
-            <p className="text-gray-500">Est. Completion</p>
-            <p className="font-mono">{formatDate(job.estimatedCompletion)}</p>
+            <p className="text-muted-foreground">Est. Completion</p>
+            <p className="font-mono text-foreground">{formatDate(job.estimatedCompletion)}</p>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 text-sm text-gray-500">
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Clock className="h-4 w-4" />
           <span>Last successful: {getLastSuccessfulText(job.lastSuccessful)}</span>
         </div>
