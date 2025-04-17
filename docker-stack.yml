@@ -21,9 +21,10 @@ services:
       - traefik-public
     deploy:
       replicas: 1
+      # Modified placement constraints to be more flexible
       placement:
         constraints:
-          - node.role == worker
+          - node.role == manager
       update_config:
         parallelism: 1
         delay: 10s
