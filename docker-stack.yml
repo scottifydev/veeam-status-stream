@@ -10,8 +10,7 @@ services:
         git clone --depth 1 https://github.com/scottifydev/veeam-status-stream.git /app &&
         cd /app &&
         npm install &&
-        npm install -g serve &&
-        npm install --save-dev autoprefixer tailwindcss postcss tailwindcss-animate @vitejs/plugin-react vite &&
+        npm install --save-dev autoprefixer tailwindcss postcss tailwindcss-animate @vitejs/plugin-react vite lovable-tagger &&
         npm run build &&
         serve -s dist -l 8080
       "
