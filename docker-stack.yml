@@ -10,8 +10,8 @@ services:
         git clone --depth 1 https://github.com/scottifydev/veeam-status-stream.git /app &&
         cd /app &&
         npm install &&
-        npm install -g vite &&
-        vite build &&
+        npm install vite@latest @vitejs/plugin-react-swc@latest &&
+        npx vite build &&
         npm install -g serve &&
         serve -s dist -l 8080
       "
