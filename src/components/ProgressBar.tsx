@@ -8,13 +8,13 @@ export const ProgressBar = ({ progress, status }: ProgressBarProps) => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "success":
-        return "bg-emerald-500/80";
+        return "bg-emerald-500";
       case "failed":
-        return "bg-red-500/80";
+        return "bg-red-500";
       case "warning":
-        return "bg-amber-500/80";
+        return "bg-amber-500";
       case "running":
-        return "bg-blue-500/80";
+        return "bg-primary";
       default:
         return "bg-muted";
     }

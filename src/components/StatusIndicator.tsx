@@ -30,13 +30,13 @@ export const StatusIndicator = ({ status, className = "" }: StatusIndicatorProps
         };
       case "queued":
         return {
-          color: "text-gray-400",
+          color: "text-muted-foreground",
           icon: Clock,
           label: "Queued"
         };
       case "running":
         return {
-          color: "text-blue-500",
+          color: "text-primary",
           icon: Activity,
           label: "Running"
         };

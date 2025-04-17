@@ -21,7 +21,7 @@ export const BackupJobCard = ({ job }: BackupJobCardProps) => {
   };
 
   return (
-    <Card className="p-6 hover:bg-accent/50 transition-colors border-border/40">
+    <Card className="p-6 hover:bg-secondary transition-colors duration-200 border-border/40">
       <div className="space-y-4">
         <div className="flex justify-between items-start">
           <div>
