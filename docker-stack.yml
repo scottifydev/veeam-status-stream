@@ -19,12 +19,12 @@ services:
       "
     environment:
       - NODE_ENV=production
+      - DOMAIN_NAME=${DOMAIN_NAME:-veeam-status.example.com}
     networks:
       - veeam-net
       - traefik-public
     deploy:
       replicas: 1
-      # Modified placement constraints to be more flexible
       placement:
         constraints:
           - node.role == manager
@@ -35,7 +35,7 @@ services:
         condition: on-failure
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.veeam-status.rule=Host(`veeam-status.your-domain.com`)"
+        - "traefik.http.routers.veeam-status.rule=Host(`${DOMAIN_NAME:-veeam-status.example.com}`)"
         - "traefik.http.services.veeam-status.loadbalancer.server.port=8080"
         - "traefik.http.routers.veeam-status.entrypoints=websecure"
         - "traefik.http.routers.veeam-status.tls=true"
@@ -45,3 +45,4 @@ networks:
     driver: overlay
   traefik-public:
     external: true
+
