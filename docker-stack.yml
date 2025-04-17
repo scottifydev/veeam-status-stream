@@ -10,14 +10,14 @@ services:
         git clone --depth 1 https://github.com/scottifydev/veeam-status-stream.git /app &&
         cd /app &&
         npm install &&
-        npx vite build &&
+        npm install -g vite &&
+        vite build &&
         npm install -g serve &&
         serve -s dist -l 8080
       "
     environment:
       - NODE_ENV=production
       - DOMAIN_NAME=${DOMAIN_NAME:-veeam-status.example.com}
-      # Removing GIT_TERMINAL_PROMPT as it's causing issues
     networks:
       - veeam-net
       - traefik-public
