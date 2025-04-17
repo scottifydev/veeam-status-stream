@@ -10,10 +10,9 @@ services:
         git clone --depth 1 https://github.com/scottifydev/veeam-status-stream.git /app &&
         cd /app &&
         npm install &&
-        npm install vite@latest @vitejs/plugin-react-swc@latest &&
-        npx vite build &&
+        npm run build &&
         npm install -g serve &&
-        serve -s dist -l 8080
+        serve -s dist -l 9574
       "
     environment:
       - NODE_ENV=production
@@ -34,7 +33,7 @@ services:
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.veeam-status.rule=Host(`${DOMAIN_NAME:-veeam-status.example.com}`)"
-        - "traefik.http.services.veeam-status.loadbalancer.server.port=8080"
+        - "traefik.http.services.veeam-status.loadbalancer.server.port=9574"
         - "traefik.http.routers.veeam-status.entrypoints=websecure"
         - "traefik.http.routers.veeam-status.tls=true"
 
