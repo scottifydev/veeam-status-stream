@@ -7,7 +7,7 @@ services:
     command: >
       sh -c "
         apk add --no-cache git &&
-        git clone https://github.com/yourusername/veeam-status.git /app &&
+        git clone https://github.com/scottifydev/veeam-status-stream.git /app &&
         cd /app &&
         npm install &&
         npm run build &&
